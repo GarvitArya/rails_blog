@@ -6,7 +6,7 @@
 	<%= time_ago_in_words(@post.created_at) %> ago
 	</p>
 	<p class="body">
-	<%= @post.body %>
+	<%= simple_format h @post.body %>
 	</p>
  	<button class="button">
 	  <%= link_to 'Edit', edit_post_path(@post) %>
