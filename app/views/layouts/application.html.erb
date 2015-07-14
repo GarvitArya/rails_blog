@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Blog</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag 'application', 'https://fonts.googleapis.com/css?family=Lato:400,700' %>
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js">
+        </script> 
+</head>
+
+
+<body style="background-color: #FFFFCC">
+  
+  <div id = "sidebar" style="background-color: maroon; font-family: Helvetica"><b>
+    <ul>
+      <li class="category" style="font-size: 20px; color: cyan"><u>Menu</u></li>
+      <li><a href="http://garvitarya.weebly.com">Garvit's Portfolio</a></li>
+      <li><%= link_to "All Posts", root_path %></li>
+      <li><%= link_to "New Post", new_post_path %></li>
+    </ul>
+
+    <ul>
+     <li class="category" style="font-size: 20px; color: cyan"><u>Contact</u></li>
+     <li><a href="mailto:garvit.arya007@gmail.com">E-Mail</a></li>
+    </ul>
+	</b>
+  </div>
+ <div id="main_content"><br />
+ 	<center><h1 style="font-family: Helvetica; font-size: 35px; color: #1001C9"><u><b>WELCOME TO THE WORLD OF GARV-IT</u> !!</b></h1></center>
+    
+
+    <% flash.each do |name, msg| %>
+      <%= content_tag(:div, msg, class: "alert") %>
+    <% end %>
+
+	<%= yield %>
+</body>
+</html>
